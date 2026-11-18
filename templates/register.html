@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Create account{% endblock %}{% block content %}
+<section class="auth-layout"><div class="auth-aside"><div class="eyebrow light">A PLACE FOR EVERY SKILL</div><h1>Let's build<br><em>opportunity.</em></h1><p>Join a growing network of women-led groups, skilled youth and local employers.</p><div class="auth-quote">“Every skill has value. Every person deserves a chance.”</div></div>
+<div class="auth-panel"><div class="eyebrow">GET STARTED</div><h2>Create your account</h2><p class="muted">Choose how you want to use KaushalSetu.</p>
+<form method="POST" class="form-grid"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+<label class="full">Full name / Group name<input name="name" required placeholder="Enter your name or SHG name"></label>
+<label class="full">Email address<input name="email" type="email" required placeholder="you@example.com"></label>
+<label class="full">Password<input name="password" type="password" minlength="8" required placeholder="At least 8 characters"></label>
+<label class="full">I am joining as<select name="role" required><option value="">Choose your role</option><option value="shg">Women's Self-Help Group (SHG)</option><option value="youth">Rural youth / Job seeker</option><option value="employer">Local employer</option></select></label>
+<label class="full">Village / Town / District<input name="location" placeholder="e.g. Puttur, Dakshina Kannada"></label>
+<label class="full">Skills (comma separated)<input name="skills" placeholder="e.g. tailoring, stitching, packaging"></label>
+<label class="full">Education / Qualification<input name="qualification" placeholder="Optional"></label>
+<button class="btn btn-primary full" type="submit">Create my account ↗</button>
+</form><p class="auth-switch">Already registered? <a href="{{ url_for('login') }}">Log in</a></p></div></section>{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Post opportunity{% endblock %}{% block content %}
+<section class="form-page"><div class="eyebrow">CONNECT WITH LOCAL TALENT</div><h1>Post an <em>opportunity.</em></h1><p class="muted">Be clear about the work and skills you need. Youth with matching skills can apply.</p>
+<form method="POST" class="panel-form"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+<label>Job title<input name="title" required placeholder="e.g. Handmade bag stitching assistant"></label>
+<div class="two-col"><label>Category<input name="category" required placeholder="e.g. Tailoring"></label><label>Required skills<input name="skills" required placeholder="stitching, tailoring"></label></div>
+<div class="two-col"><label>Location<input name="location" required placeholder="Village / Town"></label><label>Pay / Salary<input name="salary" placeholder="e.g. ₹500 per day"></label></div>
+<div class="two-col"><label>Work type<select name="work_type"><option>Flexible</option><option>Part-time</option><option>Full-time</option><option>Temporary</option><option>Work from home</option></select></label><label>Description<textarea name="description" rows="3" placeholder="Describe responsibilities and schedule"></textarea></label></div>
+<button class="btn btn-primary">Publish opportunity ↗</button></form></section>{% endblock %}
